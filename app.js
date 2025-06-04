@@ -65,6 +65,8 @@ app.get("/user", (req, res) => {
 
   res.send(users);
 });
+
+//api methods (get,post,put,patch,delete)
 app.put("/getSingleUser/:id", (req, res) => {
   const { id } = req.params;
   const user = users.filter((user) => user.id == id);
@@ -74,10 +76,9 @@ app.put("/getSingleUser/:id", (req, res) => {
 
 app.patch("/updateSingleUser/:id", (req, res) => {
   const { id } = req.params;
-  const { name,age } = req.body;
-
+  const { name, age } = req.body;
   const updateUsers = users.map((user) =>
-    user.id == id ? { ...user, name: name,age:age } : user
+    user.id == id ? { ...user, name: name, age: age } : user
   );
   console.log(updateUsers);
   res.send("user is updated");
