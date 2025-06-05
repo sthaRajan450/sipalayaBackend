@@ -19,10 +19,8 @@ const middelware = (req, res, next) => {
 // app.use(mid); //global level middelware
 
 app.use(express.json()); //inbuilt middelware
-
 //third party middelware
 //cors, multer
-
 //error handling middelware
 const error = (err, req, res, next) => {
   console.log("error");
